@@ -1,0 +1,13 @@
+{
+  "itemGroup.createatomania": "Example Mod Tab",
+  "block.createatomania.example_block": "Example Block",
+  "item.createatomania.example_item": "Example Item",
+
+  "createatomania.configuration.title": "Create: Atomania Configs",
+  "createatomania.configuration.section.createatomania.common.toml": "Create: Atomania Configs",
+  "createatomania.configuration.section.createatomania.common.toml.title": "Create: Atomania Configs",
+  "createatomania.configuration.items": "Item List",
+  "createatomania.configuration.logDirtBlock": "Log Dirt Block",
+  "createatomania.configuration.magicNumberIntroduction": "Magic Number Text",
+  "createatomania.configuration.magicNumber": "Magic Number"
+}
