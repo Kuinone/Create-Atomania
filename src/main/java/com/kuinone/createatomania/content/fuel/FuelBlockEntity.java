@@ -1,12 +1,19 @@
 package com.kuinone.createatomania.content.fuel;
 
-import com.kuinone.createatomania.reactor.FuelComposition;
+import java.util.List;
 
+import com.kuinone.createatomania.reactor.FuelComposition;
+import com.kuinone.createatomania.reactor.Nuclide;
+import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
+
+import net.createmod.catnip.lang.LangBuilder;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.Tag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -16,8 +23,11 @@ import net.minecraft.world.level.block.state.BlockState;
  * All state is persisted to NBT. That persistence is what makes breaking and replacing a
  * fuel block lossless: the composition travels with the block item and comes back when it
  * is placed down again.
+ * <p>
+ * The class implements Create's {@link IHaveGoggleInformation} so that looking at a fuel
+ * block through the engineer's goggles reports its full nuclide inventory.
  */
-public class FuelBlockEntity extends BlockEntity {
+public class FuelBlockEntity extends BlockEntity implements IHaveGoggleInformation {
 
 	/** The default inventory of a freshly crafted block: natural uranium. */
 	private FuelComposition composition = FuelComposition.NATURAL_URANIUM;
