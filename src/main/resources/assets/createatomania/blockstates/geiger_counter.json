@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "createatomania:block/geiger_counter" }
+  }
+}

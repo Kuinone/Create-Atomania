@@ -46,7 +46,12 @@ authors="Kuinone"
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Example mod description.
+A nuclear technology addon for Create.
+
+Adds uranium processing, a physically-motivated fission reactor simulation with
+directional neutron flux and radioactive decay chains, control rods, Geiger and
+neutron flux counters, a cumulative radiation sickness system in real units, and
+fuel reprocessing - all driven through Create's mechanical power and processing.
 '''
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
@@ -84,6 +89,15 @@ config="${mod_id}.mixins.json"
     # This version range declares a minimum of the current minecraft version up to but not including the next major version
     versionRange="${minecraft_version_range}"
     ordering="NONE"
+    side="BOTH"
+
+# Create itself is required: the addon builds on its API, its boiler heat system
+# and its processing machines.
+[[dependencies.${mod_id}]]
+    modId="create"
+    type="required"
+    versionRange="[6.0.0,)"
+    ordering="AFTER"
     side="BOTH"
 
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares

@@ -1,10 +1,13 @@
 package com.kuinone.createatomania.content;
 
 import com.kuinone.createatomania.AtomaniaRegistry;
+import com.kuinone.createatomania.content.detector.DetectorBlock;
+import com.kuinone.createatomania.content.detector.DetectorKind;
 import com.kuinone.createatomania.content.fuel.FuelBlock;
 import com.kuinone.createatomania.content.fuel.FuelBlockItem;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -19,9 +22,9 @@ import net.neoforged.neoforge.registries.DeferredItem;
  * Activity figures are in becquerels per item and are the only place radiation strength is
  * defined; the radiation system reads them rather than hard-coding anything.
  */
-public final class AtomaniaContent {
+public final class ContentRegistry {
 
-	private AtomaniaContent() {}
+	private ContentRegistry() {}
 
 	// ------------------------------------------------------------------
 	// Items
@@ -84,4 +87,45 @@ public final class AtomaniaContent {
 	public static final DeferredItem<FuelBlockItem> FUEL_BLOCK_ITEM = AtomaniaRegistry.ITEMS.registerItem(
 		"fuel_block",
 		properties -> new FuelBlockItem(FUEL_BLOCK.get(), properties));
+
+	/** A control rod: absorbs neutrons and throttles the chain reaction. */
+	public static final DeferredBlock<ControlRodBlock> CONTROL_ROD = AtomaniaRegistry.BLOCKS.registerBlock(
+		"control_rod",
+		ControlRodBlock::new,
+		BlockBehaviour.Properties.of()
+			.mapColor(MapColor.COLOR_GRAY)
+			.strength(4.0F, 6.0F)
+			.sound(SoundType.METAL)
+			.pushReaction(PushReaction.BLOCK)
+			.requiresCorrectToolForDrops());
+
+	public static final DeferredItem<BlockItem> CONTROL_ROD_ITEM =
+		AtomaniaRegistry.ITEMS.registerSimpleBlockItem(CONTROL_ROD);
+
+	/** Counts ionising radiation around it and outputs a redstone signal. */
+	public static final DeferredBlock<DetectorBlock> GEIGER_COUNTER = AtomaniaRegistry.BLOCKS.registerBlock(
+		"geiger_counter",
+		properties -> new DetectorBlock(properties, DetectorKind.RADIATION),
+		BlockBehaviour.Properties.of()
+			.mapColor(MapColor.COLOR_LIGHT_GRAY)
+			.strength(2.5F, 3.0F)
+			.sound(SoundType.METAL)
+			.requiresCorrectToolForDrops());
+
+	public static final DeferredItem<BlockItem> GEIGER_COUNTER_ITEM =
+		AtomaniaRegistry.ITEMS.registerSimpleBlockItem(GEIGER_COUNTER);
+
+	/** Counts neutron flux around it and outputs a redstone signal. */
+	public static final DeferredBlock<DetectorBlock> NEUTRON_FLUX_COUNTER =
+		AtomaniaRegistry.BLOCKS.registerBlock(
+			"neutron_flux_counter",
+			properties -> new DetectorBlock(properties, DetectorKind.NEUTRON_FLUX),
+			BlockBehaviour.Properties.of()
+				.mapColor(MapColor.COLOR_CYAN)
+				.strength(2.5F, 3.0F)
+				.sound(SoundType.METAL)
+				.requiresCorrectToolForDrops());
+
+	public static final DeferredItem<BlockItem> NEUTRON_FLUX_COUNTER_ITEM =
+		AtomaniaRegistry.ITEMS.registerSimpleBlockItem(NEUTRON_FLUX_COUNTER);
 }

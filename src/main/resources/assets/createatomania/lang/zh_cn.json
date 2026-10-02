@@ -1,0 +1,52 @@
+{
+  "itemGroup.createatomania": "机械动力：核能",
+
+  "block.createatomania.fuel_block": "核燃料块",
+  "block.createatomania.control_rod": "控制棒",
+  "block.createatomania.geiger_counter": "盖格计数器",
+  "block.createatomania.neutron_flux_counter": "中子通量计数器",
+
+  "item.createatomania.raw_uranium": "粗铀",
+  "item.createatomania.uranium_ingot": "铀锭",
+  "item.createatomania.uranium_235": "铀-235",
+  "item.createatomania.uranium_238": "铀-238",
+  "item.createatomania.plutonium_239": "钚-239",
+  "item.createatomania.high_level_waste": "高放射性核废料",
+  "item.createatomania.low_level_waste": "低放射性核废料",
+
+  "createatomania.nuclide.u235": "铀-235",
+  "createatomania.nuclide.u238": "铀-238",
+  "createatomania.nuclide.pu239": "钚-239",
+  "createatomania.nuclide.i135": "碘-135",
+  "createatomania.nuclide.xe135": "氙-135",
+  "createatomania.nuclide.high_waste": "高放射性衰变产物",
+  "createatomania.nuclide.low_waste": "低放射性衰变产物",
+
+  "createatomania.tooltip.activity": "放射性活度：%s",
+  "createatomania.tooltip.radioactive_warning": "放射性物品 —— 请谨慎处理",
+  "createatomania.tooltip.fuel_contents": "燃料成分：",
+
+  "createatomania.hud.dose_rate": "剂量率",
+  "createatomania.hud.accumulated_dose": "累计剂量",
+  "createatomania.hud.neutron_flux": "中子通量",
+
+  "createatomania.detector.radiation": "辐射",
+  "createatomania.detector.neutron_flux": "中子通量",
+
+  "create.gui.goggles.fuel_block": "核燃料",
+  "create.gui.goggles.fissile_fraction": "易裂变比例",
+  "create.gui.goggles.geiger_counter": "盖格计数器",
+  "create.gui.goggles.neutron_flux_counter": "中子通量计数器",
+  "create.gui.goggles.flux_reading": "通量读数",
+  "create.gui.goggles.dose_rate": "剂量率",
+  "create.gui.goggles.redstone_output": "红石输出",
+
+  "createatomania.configuration.title": "机械动力：核能 配置",
+  "createatomania.configuration.section.createatomania.common.toml": "机械动力：核能 配置",
+  "createatomania.configuration.section.createatomania.common.toml.title": "机械动力：核能 配置",
+  "createatomania.configuration.simulation": "反应堆模拟",
+  "createatomania.configuration.cross_sections": "裂变截面",
+  "createatomania.configuration.thermal": "慢化与热量",
+  "createatomania.configuration.control_rod": "控制棒",
+  "createatomania.configuration.radiation": "辐射与辐射病"
+}

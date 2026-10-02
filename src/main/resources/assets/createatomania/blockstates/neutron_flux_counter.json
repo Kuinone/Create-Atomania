@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "createatomania:block/neutron_flux_counter" }
+  }
+}

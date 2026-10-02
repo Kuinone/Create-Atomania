@@ -34,6 +34,26 @@ public class FuelBlock extends Block implements EntityBlock {
 		return new FuelBlockEntity(pos, state);
 	}
 
+	@Override
+	protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState,
+		boolean movedByPiston) {
+
+		super.onPlace(state, level, pos, oldState, movedByPiston);
+		if (level instanceof net.minecraft.server.level.ServerLevel serverLevel) {
+			com.kuinone.createatomania.reactor.ReactorTracker.track(serverLevel, pos);
+		}
+	}
+
+	@Override
+	protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState,
+		boolean movedByPiston) {
+
+		if (level instanceof net.minecraft.server.level.ServerLevel serverLevel) {
+			com.kuinone.createatomania.reactor.ReactorTracker.untrack(serverLevel, pos);
+		}
+		super.onRemove(state, level, pos, newState, movedByPiston);
+	}
+
 	@Nullable
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,

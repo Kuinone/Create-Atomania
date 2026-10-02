@@ -1,0 +1,5 @@
+{
+  "type": "createatomania:fuel_reprocessing",
+  "ingredient": { "item": "createatomania:fuel_block" },
+  "processing_time": 300
+}

@@ -1,0 +1,12 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    { "item": "createatomania:raw_uranium" }
+  ],
+  "results": [
+    { "id": "createatomania:uranium_238", "count": 2 },
+    { "id": "createatomania:uranium_235", "chance": 0.15 },
+    { "id": "createatomania:low_level_waste", "chance": 0.25 }
+  ],
+  "processing_time": 250
+}

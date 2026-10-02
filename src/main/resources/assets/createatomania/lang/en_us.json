@@ -1,13 +1,52 @@
 {
-  "itemGroup.createatomania": "Example Mod Tab",
-  "block.createatomania.example_block": "Example Block",
-  "item.createatomania.example_item": "Example Item",
+  "itemGroup.createatomania": "Create: Atomania",
+
+  "block.createatomania.fuel_block": "Nuclear Fuel Block",
+  "block.createatomania.control_rod": "Control Rod",
+  "block.createatomania.geiger_counter": "Geiger Counter",
+  "block.createatomania.neutron_flux_counter": "Neutron Flux Counter",
+
+  "item.createatomania.raw_uranium": "Raw Uranium",
+  "item.createatomania.uranium_ingot": "Uranium Ingot",
+  "item.createatomania.uranium_235": "Uranium-235",
+  "item.createatomania.uranium_238": "Uranium-238",
+  "item.createatomania.plutonium_239": "Plutonium-239",
+  "item.createatomania.high_level_waste": "High-Level Nuclear Waste",
+  "item.createatomania.low_level_waste": "Low-Level Nuclear Waste",
+
+  "createatomania.nuclide.u235": "Uranium-235",
+  "createatomania.nuclide.u238": "Uranium-238",
+  "createatomania.nuclide.pu239": "Plutonium-239",
+  "createatomania.nuclide.i135": "Iodine-135",
+  "createatomania.nuclide.xe135": "Xenon-135",
+  "createatomania.nuclide.high_waste": "High-Level Waste",
+  "createatomania.nuclide.low_waste": "Low-Level Waste",
+
+  "createatomania.tooltip.activity": "Activity: %s",
+  "createatomania.tooltip.radioactive_warning": "Radioactive - handle with care",
+  "createatomania.tooltip.fuel_contents": "Fuel composition:",
+
+  "createatomania.hud.dose_rate": "Dose rate",
+  "createatomania.hud.accumulated_dose": "Accumulated dose",
+  "createatomania.hud.neutron_flux": "Neutron flux",
+
+  "createatomania.detector.radiation": "Radiation",
+  "createatomania.detector.neutron_flux": "Neutron flux",
+
+  "create.gui.goggles.fuel_block": "Nuclear Fuel",
+  "create.gui.goggles.fissile_fraction": "Fissile fraction",
+  "create.gui.goggles.geiger_counter": "Geiger Counter",
+  "create.gui.goggles.neutron_flux_counter": "Neutron Flux Counter",
+  "create.gui.goggles.flux_reading": "Flux reading",
+  "create.gui.goggles.dose_rate": "Dose rate",
+  "create.gui.goggles.redstone_output": "Redstone output",
 
   "createatomania.configuration.title": "Create: Atomania Configs",
   "createatomania.configuration.section.createatomania.common.toml": "Create: Atomania Configs",
   "createatomania.configuration.section.createatomania.common.toml.title": "Create: Atomania Configs",
-  "createatomania.configuration.items": "Item List",
-  "createatomania.configuration.logDirtBlock": "Log Dirt Block",
-  "createatomania.configuration.magicNumberIntroduction": "Magic Number Text",
-  "createatomania.configuration.magicNumber": "Magic Number"
+  "createatomania.configuration.simulation": "Reactor Simulation",
+  "createatomania.configuration.cross_sections": "Fission Cross Sections",
+  "createatomania.configuration.thermal": "Moderation and Heat",
+  "createatomania.configuration.control_rod": "Control Rods",
+  "createatomania.configuration.radiation": "Radiation and Sickness"
 }

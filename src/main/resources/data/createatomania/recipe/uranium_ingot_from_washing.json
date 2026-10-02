@@ -1,0 +1,11 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    { "item": "createatomania:raw_uranium" }
+  ],
+  "results": [
+    { "id": "createatomania:uranium_ingot", "count": 1 },
+    { "id": "createatomania:uranium_238", "count": 1 },
+    { "id": "createatomania:low_level_waste", "chance": 0.35 }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    { "item": "createatomania:raw_uranium" },
+    { "item": "createatomania:raw_uranium" },
+    { "type": "neoforge:tag", "amount": 500, "tag": "c:water" }
+  ],
+  "results": [
+    { "id": "createatomania:uranium_ingot", "count": 2 },
+    { "chance": 0.5, "id": "createatomania:low_level_waste" }
+  ]
+}

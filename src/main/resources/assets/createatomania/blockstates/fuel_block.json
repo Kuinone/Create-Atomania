@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "createatomania:block/fuel_block" }
+  }
+}
