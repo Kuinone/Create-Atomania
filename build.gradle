@@ -175,6 +175,17 @@ tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
 
+// Generates the empty gametest structure. It is written with Minecraft's own NBT writer so
+// the schema is guaranteed to match what the structure reader expects; hand-writing the
+// bytes is far too easy to get subtly wrong.
+tasks.register('generateTestStructure', JavaExec) {
+    group = 'createatomania'
+    description = 'Writes src/main/resources/data/createatomania/structure/empty.nbt'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.kuinone.createatomania.tools.TestStructureGenerator'
+    args = [file('src/main/resources/data/createatomania/structure/empty.nbt').absolutePath]
+}
+
 // IDEA no longer automatically downloads sources/javadoc jars for dependencies, so we need to explicitly enable the behavior.
 idea {
     module {

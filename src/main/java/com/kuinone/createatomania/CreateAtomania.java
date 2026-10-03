@@ -25,7 +25,17 @@ public class CreateAtomania {
 
 	public CreateAtomania(IEventBus modBus, ModContainer modContainer) {
 		// Registries.
+		//
+		// Order matters here. The content registry holds the block and item entries, and the
+		// block entity types refer back to those blocks when they are built. NeoForge fires a
+		// separate RegisterEvent per registry, and it fires them in the order the registers
+		// were added to the bus. Registering the content first means AtomaniaContent is fully
+		// initialised - and its own registers still open - before the block entity types are
+		// asked to resolve their blocks. Registering them the other way round deadlocks:
+		// the block entity lambda would force AtomaniaContent to initialise while the item
+		// register had already been closed.
 		AtomaniaRegistry.register(modBus);
+		com.kuinone.createatomania.content.ContentRegistry.bootstrap();
 		AtomaniaBlockEntities.BLOCK_ENTITIES.register(modBus);
 		com.kuinone.createatomania.content.fuel.AtomaniaDataComponents.COMPONENTS.register(modBus);
 		com.kuinone.createatomania.radiation.RadiationAttachments.ATTACHMENTS.register(modBus);

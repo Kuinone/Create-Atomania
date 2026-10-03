@@ -26,6 +26,23 @@ public final class ContentRegistry {
 
 	private ContentRegistry() {}
 
+	/**
+	 * Forces this class to initialise at a controlled moment.
+	 * <p>
+	 * The block entity types need to name the mod's blocks, but a block entity register fires
+	 * its own registration event separately from the item and block registers. Touching this
+	 * class during mod construction initialises every content entry while the content
+	 * registers are still open, which avoids the deadlock where a block entity lambda would
+	 * otherwise trigger this class's static init after the item register had closed.
+	 */
+	public static void bootstrap() {
+		// Referencing a field is enough to run the static initialiser; the field itself is
+		// not otherwise needed here.
+		if (RAW_URANIUM == null) {
+			throw new IllegalStateException("Content registry failed to initialise");
+		}
+	}
+
 	// ------------------------------------------------------------------
 	// Items
 	// ------------------------------------------------------------------

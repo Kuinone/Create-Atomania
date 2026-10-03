@@ -19,7 +19,8 @@ public final class AtomaniaBlockEntities {
 
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FuelBlockEntity>> FUEL_BLOCK =
 		BLOCK_ENTITIES.register("fuel_block",
-			() -> BlockEntityType.Builder.of(FuelBlockEntity::new, ContentRegistry.FUEL_BLOCK.get())
+			() -> BlockEntityType.Builder.of(FuelBlockEntity::new,
+					ContentRegistry.FUEL_BLOCK.get())
 				.build(null));
 
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ControlRodBlockEntity>> CONTROL_ROD =
